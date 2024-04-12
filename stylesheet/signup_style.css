@@ -1,0 +1,243 @@
+/* color
+#F67280
+#C06C84
+#6C5B7B
+#355C7D
+*/
+body {
+  background: linear-gradient(
+    to bottom right,
+    #f67280,
+    #c06c84,
+    #6c5b7b,
+    #355c7d
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content_idpw {
+  width: 100%;
+  max-width: 600px;
+  background-color: #f67280;
+  border-radius: 40px;
+  padding: 120px 0 0 0;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  opacity: 90%;
+  box-shadow: 5px 3px 20px 1px rgba(0, 0, 0, 0.5);
+}
+.content_signbox {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f67280;
+  border-radius: 0px 0px 40px 40px;
+  padding: 15px 0 10px 0;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 90%;
+  box-shadow: 5px 3px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+h1 a {
+  text-align: center;
+  margin: 50px auto 30px;
+  position: absolute;
+  top: -150px;
+  left: 225px;
+  background-color: #355c7d;
+  border-radius: 90px 90px 90px 90px;
+  width: 160px;
+  height: 160px;
+  font-size: 80px;
+  color: white;
+  display: grid;
+  align-items: center;
+  text-decoration: none;
+}
+
+main {
+  width: 400px;
+  margin: 0 auto;
+}
+main #loginform {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+main #loginform fieldset {
+}
+main #loginform fieldset ul {
+}
+main #loginform fieldset ul li {
+  background-color: #6c5b7b;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 40px;
+  align-items: center;
+}
+main #loginform fieldset ul li.error {
+  color: white;
+  padding: 10px;
+  display: none;
+  margin-top: -40px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+main #loginform fieldset ul li.id_error {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+main #loginform fieldset ul li.pw_error {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+main #loginform fieldset ul li span {
+  width: 50px;
+}
+main #loginform fieldset ul li span.id_bg {
+  padding: 10px;
+  width: 40px;
+  background: #355c7d;
+  color: white;
+  font-size: 40px;
+}
+main #loginform fieldset ul li span.pw_bg {
+  padding: 10px;
+  width: 40px;
+  background: #355c7d;
+  color: white;
+  font-size: 40px;
+}
+main #loginform fieldset ul li span input {
+  width: 300px;
+  height: 40px;
+  border: 0;
+  padding-left: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+}
+main #loginform fieldset ul li span input:focus {
+  outline: 0;
+}
+main #loginform fieldset ul li span input::placeholder {
+  font-size: 20px;
+  color: white;
+}
+main #loginform fieldset ul li span input[type="text"] {
+}
+main #loginform fieldset ul li span input[type="password"] {
+}
+main #loginform fieldset ul li span.pw_show_hide {
+  width: 10px;
+  height: 50px;
+  margin: 0px 0px 0px 250px;
+  display: grid;
+  align-items: center;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+}
+main #loginform fieldset .rm_btn {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 30px 15px 30px;
+  justify-content: space-between;
+  font-size: 20px;
+  color: white;
+}
+main #loginform fieldset .rm_btn p {
+}
+main #loginform fieldset .rm_btn p label {
+}
+main
+  #loginform
+  fieldset
+  .rm_btn
+  p
+  label
+  input[name="privacy_policy_agreement"] {
+  /* appearance: none; */
+}
+main
+  #loginform
+  fieldset
+  .rm_btn
+  p
+  label
+  input[name="privacy_policy_agreement"]
+  + span {
+}
+main
+  #loginform
+  fieldset
+  .rm_btn
+  p
+  label
+  input[name="privacy_policy_agreement"]:checked
+  + span {
+}
+main #loginform fieldset .rm_btn p label span {
+}
+main #loginform fieldset .rm_btn .idpw_search {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.content_signbox #signform {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0px 0px 0px 0px;
+  justify-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#signform #signUpButton {
+  background: none;
+  width: 50%;
+  color: white;
+  text-align: center;
+  padding: 0px 0 20px 0;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#signform #signUpButton:hover {
+  text-decoration: underline;
+}
+
+footer {
+  color: #dbdbdb;
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 20px;
+}

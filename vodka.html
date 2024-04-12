@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>보드카</title>
+    <!-- 부트스크랩 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- 아이콘 -->
+    <script
+      src="https://kit.fontawesome.com/49be96d31f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 글꼴 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Whisper&display=swap" rel="stylesheet">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+      * {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+
+      header {
+        background-color: none;
+        color: #fff;
+        padding: 50px 80px 50px 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .search-button {
+        position: absolute;
+        right: 3%;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .search-input {
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        width: 500px;
+        height: 30px;
+        text-align: center;
+      }
+      .search-input:focus {
+        text-align: left;
+        outline: none;
+        border: none;
+      }
+      .btn_head_left {
+        color: white;
+        border-color: white;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-decoration: none;
+      }
+      .btn_head_left .review_text {
+        font-size: 0.8em;
+      }
+
+      .btn_head_right {
+        color: white;
+        border-color: white;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .btn_head_left:hover,
+      .nav-link:hover {
+        color: #355c7d;
+        border-color: #355c7d;
+      }
+      a.btn_head_right:hover {
+        background-color: #355c7d;
+        border-color: #355c7d;
+      }
+
+      body {
+        background: linear-gradient(
+          to bottom right,
+          #f67280,
+          #c06c84,
+          #6c5b7b,
+          #355c7d
+        );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: none;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 10px auto 10px auto;
+      }
+
+      .nav-item {
+        padding: 10px 70px;
+        display: inline-block;
+        background-color: none;
+      }
+
+      .nav-item > a {
+        text-decoration: none;
+      }
+      .nav-link {
+        font-size: 30px;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(53, 92, 125, 0.8);
+      }
+
+      .main_ing {
+        background-image: url(./images/banner.jpg);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0px 15px 0px;
+      }
+
+      .commd {
+        font-family: "Whisper", cursive;
+        font-weight: 400;
+        width: 500px;
+        height: 300px;
+        font-size: 10rem;
+        text-align: center;
+        color: white;
+        text-shadow: #fff;
+      }
+
+      .mycards {
+            width: 1600px;
+            margin: 50px auto 50px auto;
+            padding: 0 100px 0 100px;
+        }
+
+      .mycards #card .col .card {
+        margin: 10px 20px;
+      }
+
+      .mycards #card .col .card img {
+        width: 409px;
+        height: 300px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left-content">
+        <h1>
+          <a class="btn_head_left" href="index.html">
+            <i class="fa-solid fa-house"></i>
+          </a>
+          <a class="btn_head_left" href="comment.html">
+            <i class="fa-solid fa-pen-to-square"></i
+            ><span class="review_text">review</span>
+          </a>
+        </h1>
+      </div>
+
+      <div class="search-bar">
+        <input
+          type="text"
+          class="search-input align-left"
+          placeholder="Search..."
+        />
+        <button class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <div class="right-content">
+        <a class="btn btn-sm btn-outline-dark btn_head_right" href="login.html"
+          >Login</a
+        >
+        <a class="btn btn-sm btn-outline-dark btn_head_right" href="signup.html"
+          >Sign up</a
+        >
+      </div>
+    </header>
+
+    <div class="container">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="trandition.html" class="nav-link">민속주</a></li>
+        <li class="nav-item"><a href="beer.html" class="nav-link">맥주</a></li>
+        <li class="nav-item"><a href="whiskey.html" class="nav-link">위스키</a></li>
+        <li class="nav-item"><a href="vodka.html" class="nav-link" style="color: black;">보드카</a></li>
+        <li class="nav-item"><a href="wine.html" class="nav-link">와인</a></li>
+      </ul>
+    </div>
+
+    <div class="main_ing">
+      <div class="commd">
+        surisuri
+      </div>
+    </div>
+
+    <div class="mycards">
+      <div id="card" class="row row-cols-1 row-cols-md-3 g-4">
+
+      </div>
+    </div>
+  </body>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyC0IBFPLW8MHkIpCJS-mlgdYRyOdEfBBUc",
+        authDomain: "sparta-5ac2a.firebaseapp.com",
+        projectId: "sparta-5ac2a",
+        storageBucket: "sparta-5ac2a.appspot.com",
+        messagingSenderId: "959413711757",
+        appId: "1:959413711757:web:e146f2c973ae6cf60d83c4",
+        measurementId: "G-E84T4C711P"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    let docs = await getDocs(collection(db, "reviews"));
+    docs.forEach((doc) => {
+        let row = doc.data();
+        let image = row['image'];
+        let select = row['select'];
+        let title = row['title'];
+        let star = row['star'];
+        let comment = row['comment'];
+
+        let temp_html = `
+    <div class="col">
+        <div class="card">
+            <img src=${image}
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${select}</p>
+                <p class="card-text">${star}</p>
+                <p class="card-text">${comment}</p>
+            </div>
+        </div>
+    </div>`;
+    if(select == '보드카') {
+        $('#card').append(temp_html);
+    }
+    });
+</script>
+</html>

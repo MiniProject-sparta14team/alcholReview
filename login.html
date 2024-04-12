@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="stylesheet/reset.css" />
+    <link rel="stylesheet" href="stylesheet/login_style.css" />
+    <script src="script/login_script.js"></script>
+    <script src="https://kit.fontawesome.com/c0c60ab7b6.js" crossorigin="anonymous"></script>
+  </head>
+  <body >
+    <div class="container">
+      <div class="content_idpw">
+        <h1>
+          <a href="/index.html"><i class="fa-solid fa-wine-bottle"></i></a>
+        </h1>
+        <main>
+          <form action="#" method="post" id="loginform">
+            <fieldset>
+              <legend class="skip">로그인 양식</legend>
+              <ul>
+                <li>
+                  <span class="id_bg">
+                    <i class="fa-solid fa-user"></i>
+                  </span>
+                  <span>
+                    <input type="text" name="user_id" id="email" placeholder="Email ID"/>
+                  </span>
+                </li>
+                <li class="error id_error">Email ID를 입력해 주세요</li>
+                <li>
+                  <span class="pw_bg">
+                    <i class="fa-solid fa-unlock-keyhole"></i>
+                  </span>
+                  <span>
+                    <input type="password" name="user_pw" id="password" placeholder="Password"/>
+                  </span>
+                  <span class="pw_show_hide" title="문자보이기">
+                    <i class="fa-regular fa-eye" id="pw_show_hide_icon"></i>
+                    <!-- <i class="fa-regular fa-eye-slash"></i> -->
+                </span>
+                </li>
+                <li class="error pw_error">Password를 입력해 주세요</li>
+              </ul>
+              <div class="rm_btn">
+                <p>
+                  <label>
+                    <input type="checkbox" name="login_y" id="login_y" />
+                    <span>Remember me</span>
+                  </label>
+                </p>
+              </div>
+            </fieldset>
+        </main>
+          </div>
+        <div class="content_signbox">
+          <div id="signform">
+            <button type="submit" id="login_btn">Log in</button>
+            <a href="signup.html" class="join_link">Sign up</a>
+          </div>
+        </div>
+    </form>
+
+    </div>
+  </div>
+
+    <footer>&copy; 14조 14천리</footer>
+  </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDwZshErH4eiwHF4utW3VEN1ucGv6rn-jk",
+      authDomain: "alcoholreview-8f044.firebaseapp.com",
+      projectId: "alcoholreview-8f044",
+      storageBucket: "alcoholreview-8f044.appspot.com",
+      messagingSenderId: "263099804092",
+      appId: "1:263099804092:web:1cd03aff90b04b8de023b9",
+      measurementId: "G-248L3K759R"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import { getAuth, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+
+    document.getElementById('login_btn').addEventListener('click', (event) => {
+        event.preventDefault()
+        const auth = getAuth();
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                confirm('로그인 성공')
+                location.href = "/index.html";
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                if(error.code == 'auth/invalid-credential') {
+                    alert('이메일 혹은 비밀번호가 잘못되었습니다.')    
+                }
+            });
+            console.log('들어옴1')
+        setPersistence(auth, browserSessionPersistence)
+            .then(() => {
+                console.log('들어옴2')
+                return signInWithEmailAndPassword(auth, email, password);
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                console.log('들어옴3')
+                const errorCode = error.code;
+                const errorMessage = error.message;
+        });
+    })
+  </script>
+</html>
